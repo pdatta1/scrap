@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block html_head %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_layout.css') }}"/>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/index_layout2.css') }} "/>
+{% endblock %}
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <!-- Headings -->
+    <div class="fadeIn first">
+        <h3> sign up!</h3>
+    </div>
+
+
+    <!-- Login Form -->
+    <form action="/signup" method="POST">
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="USERNAME">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="PASSWORD">
+      <input type="text" id="email_address" class="fadeIn second" name="email_address" placeholder="EMAIL ADDRESS">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+             {% for message in messages %}
+            <li><p style="color:#ff0000">{{ message }}. <a href="{{ url_for('auth.login') }}">login page</a></p></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+   {% endwith %}
+
+         {% if error %}
+             <ul>
+
+            <li><p style="color:#ff0000">{{ error }} </p></li>
+        </ul>
+        {% endif %}
+    </form>
+
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+

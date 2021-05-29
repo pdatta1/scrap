@@ -1,0 +1,90 @@
+
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block html_head %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index_layout.css') }}"/>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/index_layout2.css') }} "/>
+{% endblock %}
+
+{% block content %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 ">
+		     <div class="list-group ">
+              <a href="#" class="list-group-item list-group-item-action active">My Profile </a>
+              <a href="#" class="list-group-item list-group-item-action">My Settings </a>
+
+
+
+            </div>
+		</div>
+		<div class="col-md-9">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <h4>My Profile</h4>
+		                    <hr>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <form>
+                              <div class="form-group row">
+                                <label for="username" class="col-4 col-form-label">User Name*</label>
+                                <div class="col-8">
+                                  <input id="username" name="username" placeholder="{{ username }}" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="name" class="col-4 col-form-label">First Name</label>
+                                <div class="col-8">
+                                  <input id="name" name="name" placeholder="First Name" class="form-control here" type="text">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                <div class="col-8">
+                                  <input id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text">
+                                </div>
+                              </div>
+
+
+                              <div class="form-group row">
+                                <label for="email" class="col-4 col-form-label">Email*</label>
+                                <div class="col-8">
+                                  <input id="email" name="email_address" placeholder="{{ email_address }}" class="" required="required" type="text">
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <label for="newpass" class="col-4 col-form-label">New Password</label>
+                                <div class="col-8">
+                                  <input id="newpass" name="newpass" placeholder="New Password" class="form-control here" type="password">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                  <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
+                                </div>
+                              </div>
+                            </form>
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
